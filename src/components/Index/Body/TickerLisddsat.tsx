@@ -1,15 +1,15 @@
 import { useSelector } from "react-redux"
-import { useTypedSelector } from "../hooks/useTypedSelector"
+import { useTypedSelector } from "../../../hooks/useTypedSelector"
 import { useEffect } from "react"
 import { useDispatch } from "react-redux"
-import { fetchTickers } from "../store/action-creators/ticker"
+import { fetchTickers } from "../../../store/action-creators/ticker"
+import { useActions } from "../../../hooks/useActions"
 
-export const TickerList: React.FC = () => {
+export const Table: React.FC = () => {
     const {tickers,loading,error} = useTypedSelector(state=>state.ticker)
-    console.log(tickers)
-    const dispatch = useDispatch()
+    const {fetchTickers} = useActions()
     useEffect(() => {
-        dispatch(fetchTickers())
+        fetchTickers()
     }, [])
     if (loading) {
         return <h1>Идет загрузка...</h1>
@@ -25,6 +25,5 @@ export const TickerList: React.FC = () => {
     )
 }
 
-export default TickerList
+export default Table
 
-//21.13
