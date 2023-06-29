@@ -2,11 +2,11 @@ import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import classNames from 'classnames';
-import { navigation } from '../../App';
+import { ProjectTitle, navigation } from '../../App';
 
 export default function HeaderNavbar() {
   return (
-    <Disclosure as="nav" className="bg-gray-800">
+    <Disclosure as="nav" className="bg-gray-800 mb-2">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -27,12 +27,14 @@ export default function HeaderNavbar() {
                   <img
                     className="block h-8 w-auto lg:hidden"
                     src="/img/logo.png"
-                    alt="Your Company"
+                    alt={ProjectTitle}
+                    title={ProjectTitle}
                   />
                   <img
                     className="hidden h-8 w-auto lg:block"
                     src="/img/logo.png"
-                    alt="Your Company"
+                    alt={ProjectTitle}
+                    title={ProjectTitle}
                   />
                 </div>
                 <div className="hidden sm:ml-6 sm:block">

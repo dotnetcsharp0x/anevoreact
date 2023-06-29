@@ -1,6 +1,8 @@
+import { Loader } from "./Loader"
+
 const Loading: React.FC = () => {
     return (
-        <h2>Loading...</h2>
+        <Loader />
     )
 }
 export default Loading
