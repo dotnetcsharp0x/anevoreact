@@ -1,7 +1,7 @@
 export default function FooterContent() {
     return (
 
-<footer className="bg-gray-800 text-center text-white mt-2">
+<footer className="bg-gray-800 text-center text-white pt-2">
   <div className="pt-9 pb-0 text-center">
     <div className="mb-0 flex justify-center">
       <a href="#!" className="mr-9 text-neutral-800 dark:text-neutral-200">

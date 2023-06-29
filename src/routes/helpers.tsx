@@ -6,6 +6,9 @@ export const pathsPublic: { [k: string]: string } = {
     instruments: '/Instruments',
     blog: '/Blog',
     api: '/API',
+    profile: '/Profile/:idOrSlug',
+    detail: '/Detail',
+    login: '/Login',
 }
 
 export const pathsPrivate: { [k: string]: string} = {
@@ -16,7 +19,10 @@ export const enum Titles {
     Home="Home",
     Instruments="Instruments",
     Blog="Blog",
-    API="API"
+    API="API",
+    Profile="Profile",
+    Detail="Detail",
+    Login="Login"
   }
   
   export const enum TitlesIndex {
