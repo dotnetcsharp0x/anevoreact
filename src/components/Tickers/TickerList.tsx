@@ -1,11 +1,13 @@
-import { useEffect } from "react"
-import { useActions } from "../../../hooks/useActions"
-import { useTypedSelector } from "../../../hooks/useTypedSelector"
+import { JSXElementConstructor, Key, ReactElement, ReactNode, ReactPortal, useEffect } from "react"
+import { useActions } from "../../hooks/useActions"
+import { useTypedSelector } from "../../hooks/useTypedSelector"
+import Loading from "../Loading"
+
 
 /* This example requires Tailwind CSS v2.0+ */
   
   export const TickerList: React.FC = () => {
-    const {tickers,loading,error} = useTypedSelector(state=>state.ticker)
+    const {tickers,loading,error} = useTypedSelector((state: { ticker: any })=>state.ticker)
     const {fetchTickers} = useActions()
     useEffect(() => {
         fetchTickers()
@@ -14,6 +16,9 @@ import { useTypedSelector } from "../../../hooks/useTypedSelector"
 
     return (
       <div className="columns-2xl columns-1lg columns-2sm mx-auto max-w-7xl">
+        {loading &&
+                  <h3 className="text-center w-full"><Loading /></h3>
+                }
         <div className="-my-2 overflow-x-auto">
           <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
             <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
@@ -34,7 +39,7 @@ import { useTypedSelector } from "../../../hooks/useTypedSelector"
                     </th>
                     <th
                       scope="col"
-                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                      className="hidden md:block px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                     >
                       Title
                     </th>
@@ -56,15 +61,15 @@ import { useTypedSelector } from "../../../hooks/useTypedSelector"
                   </tr>
                 </thead>
                 <tbody className="bg-white divide-y divide-gray-200">
-                  {tickers.map((ticker) => (
-                    <tr key={ticker.id}>
+                  {tickers.map((ticker: { id: Key | null | undefined; ticker: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | null | undefined; name: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | null | undefined; closePrice: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | null | undefined; currency_name: any }) => (
+                    <tr key={ticker.id} className="hover:bg-slate-100 hover:cursor-pointer">
                       <td className="px-6 py-2 whitespace-nowrap text-sm font-medium text-gray-900">
                       {/* "/img/stocks/AAPL.png" */}
                         <img src={'/img/stocks/'+ticker.ticker+'.png'} className="h-11 w-12 rounded-full"></img>  
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{ticker.ticker}</td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{ticker.name}</td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{ticker.closePrice}
+                      <td className="hidden md:block px-6 py-4 whitespace-nowrap text-sm text-gray-900">{ticker.name}</td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{ticker.closePrice}
                       {reactStringReplace(ticker.currency_name , 'usd', (match: any, i: any) => (
                         <div className="inline-flex">$</div>
                       ))}

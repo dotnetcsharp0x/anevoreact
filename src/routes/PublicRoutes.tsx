@@ -1,10 +1,10 @@
 import { lazy } from 'react'
 import { Route, Navigate, Routes, useLocation} from 'react-router-dom'
 import { checkPathMatch, paths } from './helpers'
-import HomePage from '../pages/HomePage'
-import InstrumentsPage from '../pages/Instruments/InstrumentsPage'
-import BlogPage from '../pages/Blog/BlogPage'
-import APIPage from '../pages/API/APIPage'
+import InstrumentsPage from '../pages/InstrumentsPage/InstrumentsPage'
+import BlogPage from '../pages/BlogPage/BlogPage'
+import APIPage from '../pages/APIPage/APIPage'
+import HomePage from '../pages/HomePage/HomePage'
 
 // const HomePage = lazy(() => import('pages/HomePage')) 
 

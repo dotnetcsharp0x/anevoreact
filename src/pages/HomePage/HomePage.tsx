@@ -1,8 +1,9 @@
 import { Helmet } from 'react-helmet'
 import HeaderNavbar from '../../components/Header/HeaderNavbar'
-import { TickerList } from '../../components/Index/Body/TickerList'
 import { navigation } from '../../App'
 import { TitlesIndex, Titles } from '../../routes/helpers'
+import { TickerList } from '../../components/Tickers/TickerList'
+import BodyContent from './BodyContent'
 
 const HomePage: React.FC = () => {
     navigation[TitlesIndex.Home].current=true
@@ -12,7 +13,8 @@ const HomePage: React.FC = () => {
                 {Titles.Home}
             </title>
         </Helmet>
-        <TickerList/>
+        <BodyContent />
+        <TickerList />
     </>
 }
 

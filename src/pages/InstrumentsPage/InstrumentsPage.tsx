@@ -1,19 +1,20 @@
 import { Helmet } from 'react-helmet'
 import BottomNavbar from '../../components/Header/BottomNavbar'
-import { TickerList } from '../../components/Index/Body/TickerList'
 import { navigation } from '../../App'
 import { TitlesIndex, Titles } from '../../routes/helpers'
+import { TickerList } from '../../components/Tickers/TickerList'
 
-const BlogPage: React.FC = () => {
-    navigation[TitlesIndex.Blog].current=true
+const InstrumentsPage: React.FC = () => {
+    navigation[TitlesIndex.Instruments].current=true
     return <>
         <Helmet>
             <title>
-            {Titles.Blog}
+            {Titles.Instruments}
             </title>
         </Helmet>
         <BottomNavbar/>
+        <TickerList/>
     </>
 }
 
-export default BlogPage
+export default InstrumentsPage
