@@ -2,11 +2,15 @@ import { JSXElementConstructor, Key, ReactElement, ReactNode, ReactPortal, useEf
 import { useActions } from "../../hooks/useActions"
 import { useTypedSelector } from "../../hooks/useTypedSelector"
 import Loading from "../Loading"
+import { Link, useLocation } from "react-router-dom"
 
 
 /* This example requires Tailwind CSS v2.0+ */
   
   export const TickerList: React.FC = () => {
+    const location = useLocation()
+console.log("Test1");
+    console.log("href: " + window.location.hostname+"/Detail/" + location.state); 
     const {tickers,loading,error} = useTypedSelector((state: { ticker: any })=>state.ticker)
     const {fetchTickers} = useActions()
     useEffect(() => {
@@ -62,7 +66,8 @@ import Loading from "../Loading"
                 </thead>
                 <tbody className="bg-white divide-y divide-gray-200">
                   {tickers.map((ticker: { id: Key | null | undefined; ticker: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | null | undefined; name: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | null | undefined; closePrice: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | null | undefined; currency_name: any }) => (
-                    <tr key={ticker.id} className="hover:bg-slate-100 hover:cursor-pointer">
+                    <Link to={"Detail/" + ticker.ticker} className="contents align-middle">
+                      <tr key={ticker.id} className="hover:bg-slate-100 hover:cursor-pointer">
                       <td className="px-6 py-2 whitespace-nowrap text-sm font-medium text-gray-900">
                       {/* "/img/stocks/AAPL.png" */}
                         <img src={'/img/stocks/'+ticker.ticker+'.png'} className="h-11 w-12 rounded-full"></img>  
@@ -80,6 +85,7 @@ import Loading from "../Loading"
                         </a>
                       </td> */}
                     </tr>
+                    </Link>
                   ))}
                 </tbody>
               </table>

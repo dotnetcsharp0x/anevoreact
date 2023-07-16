@@ -1,9 +1,9 @@
-import { ErrorMessage } from "../../components/ErrorMessage";
-import { Loader } from "../../components/Loader";
-import { Ticker } from "../../Test files/Ticker";
+import { TickerDetail } from "../../components/Tickers/TickerDetail";
 
 export function DetailPage() {
         return (
-            <h1>Detail page</h1>
+            <>
+                <TickerDetail />
+            </>
         )
 }

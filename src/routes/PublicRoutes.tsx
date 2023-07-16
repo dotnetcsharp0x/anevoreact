@@ -24,6 +24,7 @@ return (
         <Route path={paths.api} element={<APIPage />} />
         <Route path={paths.profile} element={<ProfilePage />} />
         <Route path={paths.detail} element={<DetailPage />} />
+        <Route path={paths.instrumentsdetail} element={<DetailPage />} />
         <Route path={paths.login} element={<LoginPage />} />
         <Route path='*' element={!isMatch ? <Navigate to={paths.home}/> : null} />
     </Routes>

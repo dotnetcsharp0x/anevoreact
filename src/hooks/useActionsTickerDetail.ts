@@ -1,8 +1,8 @@
 import { useDispatch } from "react-redux"
 import { bindActionCreators } from "redux"
-import * as TickerActionCreators from '../store/action-creators/HomePage/GetTickers/GetTickers'
+import * as TickerActionCreators from '../store/action-creators/DetailPage/GetTickerDetail'
 
-export const useActions = () => {
+export const useActionsTickerDetail = () => {
     const dispatch = useDispatch() 
     return bindActionCreators(TickerActionCreators ,dispatch)
 }

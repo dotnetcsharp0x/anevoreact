@@ -7,7 +7,8 @@ export const pathsPublic: { [k: string]: string } = {
     blog: '/Blog',
     api: '/API',
     profile: '/Profile/:idOrSlug',
-    detail: '/Detail',
+    detail: '/Detail/:url_ticker',
+    instrumentsdetail: 'Instruments/Detail/:url_ticker',
     login: '/Login',
 }
 
