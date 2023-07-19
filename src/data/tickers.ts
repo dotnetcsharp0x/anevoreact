@@ -36,5 +36,6 @@ export const tickerDetail: ITickerDetail = {
     icon_url: '0',
     share_class_shares_outstanding: 0,
     weighted_shares_outstanding: 0,
-    round_lot: 0
+    round_lot: 0,
+    current_price: 0
 }
