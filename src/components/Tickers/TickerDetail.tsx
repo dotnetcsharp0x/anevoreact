@@ -31,8 +31,6 @@ export const TickerDetail: React.FC = () => {
                     current_price: number;
                   }) => (
         <>
-       
-
     <div className=" flex mb-4">
         <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-2xl w-9/12 p3 flex">
         
@@ -60,39 +58,42 @@ export const TickerDetail: React.FC = () => {
         </div>
         
         </div>
-        <ul className="flex list-none flex-row flex-wrap border-b-0 pl-0" role="tablist" data-te-nav-ref>
+        <ul
+  className="mb-5 flex list-none flex-row flex-wrap border-b-0 pl-0"
+  role="tablist"
+  data-te-nav-ref>
   <li role="presentation">
     <a
-      href="#tabs-home"
+      href="#tabs-main"
       className="my-2 block border-x-0 border-b-2 border-t-0 border-transparent px-7 pb-3.5 pt-4 text-xs font-medium uppercase leading-tight text-neutral-500 hover:isolate hover:border-transparent hover:bg-neutral-100 focus:isolate focus:border-transparent data-[te-nav-active]:border-primary data-[te-nav-active]:text-primary dark:text-neutral-400 dark:hover:bg-transparent dark:data-[te-nav-active]:border-primary-400 dark:data-[te-nav-active]:text-primary-400"
       data-te-toggle="pill"
-      data-te-target="#tabs-home"
+      data-te-target="#tabs-main"
       data-te-nav-active
       role="tab"
-      aria-controls="tabs-home"
-      aria-selected="true">
-        Main
-      </a>
+      aria-controls="tabs-main"
+      aria-selected="true"
+      >Main</a
+    >
   </li>
   <li role="presentation">
     <a
-      href="#tabs-profile"
+      href="#tabs-info"
       className="focus:border-transparen my-2 block border-x-0 border-b-2 border-t-0 border-transparent px-7 pb-3.5 pt-4 text-xs font-medium uppercase leading-tight text-neutral-500 hover:isolate hover:border-transparent hover:bg-neutral-100 focus:isolate data-[te-nav-active]:border-primary data-[te-nav-active]:text-primary dark:text-neutral-400 dark:hover:bg-transparent dark:data-[te-nav-active]:border-primary-400 dark:data-[te-nav-active]:text-primary-400"
       data-te-toggle="pill"
-      data-te-target="#tabs-profile"
+      data-te-target="#tabs-info"
       role="tab"
-      aria-controls="tabs-profile"
-      aria-selected="false">
-        Info
-      </a>
+      aria-controls="tabs-info"
+      aria-selected="false"
+      >Info</a
+    >
   </li>
 </ul>
 <div className="mb-6">
-  <div
+<div
     className="hidden opacity-100 transition-opacity duration-150 ease-linear data-[te-tab-active]:block"
-    id="tabs-home"
+    id="tabs-main"
     role="tabpanel"
-    aria-labelledby="tabs-home-tab"
+    aria-labelledby="tabs-main-tab"
     data-te-tab-active>
         <nav aria-label="Page navigation example">
   <ul className="inline-flex -space-x-px text-base h-10 mt-3 mb-3">
@@ -152,9 +153,9 @@ export const TickerDetail: React.FC = () => {
   </div>
   <div
     className="hidden opacity-0 transition-opacity duration-150 ease-linear data-[te-tab-active]:block"
-    id="tabs-profile"
+    id="tabs-info"
     role="tabpanel"
-    aria-labelledby="tabs-profile-tab">
+    aria-labelledby="tabs-info-tab">
     Tab 2 content
   </div>
 </div>
