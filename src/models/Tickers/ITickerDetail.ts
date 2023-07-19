@@ -31,4 +31,5 @@ export interface ITickerDetail {
     share_class_shares_outstanding: number;
     weighted_shares_outstanding: number;
     round_lot: number;
+    current_price: number;
 }
